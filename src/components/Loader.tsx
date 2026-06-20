@@ -19,21 +19,21 @@ export default function Loader({ onComplete }: LoaderProps) {
   const [logIndex, setLogIndex] = useState(0);
 
   useEffect(() => {
-    // Progress increment
+    const startTime = Date.now();
+    const duration = 4600; // 4.6 seconds for loading bar animation
+
     const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          setTimeout(() => {
-            onComplete();
-          }, 600);
-          return 100;
-        }
-        // Accelerate near the end
-        const step = prev > 80 ? Math.floor(Math.random() * 4) + 1 : Math.floor(Math.random() * 8) + 2;
-        return Math.min(prev + step, 100);
-      });
-    }, 45);
+      const elapsed = Date.now() - startTime;
+      const pct = Math.min(Math.floor((elapsed / duration) * 100), 100);
+      setProgress(pct);
+
+      if (elapsed >= duration) {
+        clearInterval(interval);
+        setTimeout(() => {
+          onComplete();
+        }, 400); // Wait remaining 400ms to total exactly 5 seconds (5000ms)
+      }
+    }, 30);
 
     return () => clearInterval(interval);
   }, [onComplete]);

@@ -54,7 +54,7 @@ function StatItem({
       
       // Ease out circle expression
       const easeValue = Math.sqrt(1 - Math.pow(percentage - 1, 2));
-      setCount(Math.floor(easeValue * targetValue));
+      setCount(easeValue * targetValue);
 
       if (progress < duration) {
         requestAnimationFrame(animateCount);
@@ -73,7 +73,7 @@ function StatItem({
       
       <div className="flex items-baseline justify-center mb-1">
         <span className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-normal bg-clip-text text-transparent bg-gradient-to-r from-white via-brand-cyan to-brand-blue transform group-hover:scale-105 transition-transform duration-300">
-          {count}
+          {count % 1 === 0 ? count : count.toFixed(1)}
         </span>
         <span className="text-xl sm:text-2xl font-bold text-brand-cyan ml-0.5">
           {stat.suffix}

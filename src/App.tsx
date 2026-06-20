@@ -58,7 +58,7 @@ export default function App() {
         className={`min-h-screen relative overflow-x-hidden selection:bg-brand-cyan/20 select-none ${
           isLightMode
             ? 'bg-[#f8fafc] text-[#0f172a] font-sans'
-            : 'bg-[#030712] text-white font-sans'
+            : 'bg-transparent text-white font-sans'
         }`}
       >
         {/* 2. Custom Background (Cursor Spotlight / Floating Blobs) */}

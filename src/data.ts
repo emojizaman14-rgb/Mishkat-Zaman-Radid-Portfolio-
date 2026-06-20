@@ -31,7 +31,7 @@ export const personalInfo = {
 };
 
 export const statsData: StatsItem[] = [
-  { value: 2, suffix: '+', label: 'Years Learning Experience', delay: 0.1 },
+  { value: 1.5, suffix: '+', label: 'Years Experience', delay: 0.1 },
   { value: 15, suffix: '+', label: 'Projects Completed', delay: 0.2 },
   { value: 8, suffix: '+', label: 'Technologies Learned', delay: 0.3 },
   { value: 100, suffix: '%', label: 'Passion For Innovation', delay: 0.4 }
@@ -40,6 +40,7 @@ export const statsData: StatsItem[] = [
 export const skillsData: SkillItem[] = [
   { name: 'UI/UX Design', category: 'design', percentage: 95, iconName: 'Layout', level: 'Expert', delay: 0.1 },
   { name: 'Figma', category: 'design', percentage: 92, iconName: 'Figma', level: 'Expert', delay: 0.2 },
+  { name: 'Graphic Design', category: 'design', percentage: 75, iconName: 'Palette', level: 'Intermediate', delay: 0.25 },
   { name: 'HTML & CSS', category: 'frontend', percentage: 90, iconName: 'Html5', level: 'Advanced', delay: 0.3 },
   { name: 'JavaScript', category: 'frontend', percentage: 80, iconName: 'Code2', level: 'Intermediate', delay: 0.4 },
   { name: 'Tailwind CSS', category: 'frontend', percentage: 88, iconName: 'Wind', level: 'Advanced', delay: 0.5 },
@@ -103,26 +104,26 @@ export const servicesData: ServiceItem[] = [
 export const timelineData: TimelineItem[] = [
   {
     id: 'e1',
-    period: '2024 - Present',
-    title: 'Aspiring Programmer & Robotics Builder',
-    subtitle: 'Self-education and Prototyping',
-    description: 'Actively studying robotics architectures, Raspberry Pi / Arduino circuit programming, and Python alongside advanced frontend development concepts.',
+    period: 'Present',
+    title: 'High School Student',
+    subtitle: 'General Academic Studies & Science',
+    description: 'Currently studying in high school, pairing secondary education with self-taught graphics design, UI/UX aesthetics, and coding systems.',
     type: 'education'
   },
   {
     id: 'e2',
-    period: '2022 - Present',
-    title: 'Independent UI/UX Designer',
-    subtitle: 'Figma and Digital Interface Design',
-    description: 'Designing fully responsive pages, custom dashboards, app frames, and high-fidelity prototypes focusing on dark aesthetics and micro-interactions.',
+    period: '1.5 Years Experience',
+    title: 'Freelance UI/UX & Graphic Designer',
+    subtitle: 'Independent Design, Brand Styling & Prototyping',
+    description: 'Creating high-fidelity Figma designs, pixel-perfect layouts, responsive web components, and graphics art for personal and client-focused projects.',
     type: 'experience'
   },
   {
     id: 'e3',
-    period: '2021 - 2023',
-    title: 'Primary Computer Science Foundation',
-    subtitle: 'Foundational Coding & Design Principles',
-    description: 'First learned basic syntax in HTML/CSS and logic structures, leading to a deep passion for modern UI aesthetics and automated smart mechanical models.',
+    period: '2022 - Present',
+    title: 'Web Coding & Robotics Learner',
+    subtitle: 'Foundational Programming & Automation',
+    description: 'Self-studying Python, Javascript, HTML/CSS, and Arduino circuit boards to fuse interactive mechanics with creative frontend development, active for over 1.5 years.',
     type: 'education'
   }
 ];

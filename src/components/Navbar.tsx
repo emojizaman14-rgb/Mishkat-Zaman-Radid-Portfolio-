@@ -83,7 +83,7 @@ export default function Navbar({ isLightMode, toggleTheme, cvUrl = '#' }: Navbar
           className="group flex items-center gap-1"
         >
           <span className="font-display text-xl font-bold tracking-tight">
-            Mishkat
+            Radid
             <span className="text-brand-cyan font-extrabold group-hover:animate-pulse">.</span>
           </span>
         </a>

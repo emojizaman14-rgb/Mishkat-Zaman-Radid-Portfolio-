@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, useInView } from 'motion/react';
-import { Compass, Layers, Code2, Code, Wind, Terminal, Cpu, Smartphone, Activity, Box } from 'lucide-react';
+import { Compass, Layers, Code2, Code, Wind, Terminal, Cpu, Smartphone, Activity, Box, Palette } from 'lucide-react';
 import { skillsData } from '../data';
 
 const iconMap: { [key: string]: any } = {
@@ -12,7 +12,8 @@ const iconMap: { [key: string]: any } = {
   Terminal: Terminal,
   Cpu: Cpu,
   Smartphone: Smartphone,
-  Activity: Activity
+  Activity: Activity,
+  Palette: Palette
 };
 
 export default function Skills({ isLightMode }: { isLightMode: boolean }) {

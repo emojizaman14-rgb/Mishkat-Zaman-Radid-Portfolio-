@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { Facebook, Instagram, Phone, Compass, ArrowRight } from 'lucide-react';
 import { personalInfo } from '../data';
 
-const profilePic = "/src/assets/images/ayanokoji_portrait_1781891653182.jpg";
+import profilePic from '../assets/images/ayanokoji_portrait_1781891653182.jpg';
 
 interface HeroProps {
   isLightMode: boolean;
