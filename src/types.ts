@@ -24,7 +24,7 @@ export interface ProjectItem {
 
 export interface SkillItem {
   name: string;
-  category: 'design' | 'frontend' | 'robotics';
+  category: 'design' | 'frontend' | 'robotics' | 'psychology';
   percentage: number;
   iconName: string;
   level: string;

@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Compass, Laptop, Smartphone, Code, Layers, Activity, Box } from 'lucide-react';
+import { Compass, Laptop, Smartphone, Code, Layers, Activity, Box, Brain } from 'lucide-react';
 import { servicesData } from '../data';
 
 const iconMap: { [key: string]: any } = {
@@ -8,7 +8,8 @@ const iconMap: { [key: string]: any } = {
   Smartphone: Smartphone,
   Code: Code,
   Layers: Layers,
-  Activity: Activity
+  Activity: Activity,
+  Brain: Brain
 };
 
 export default function Services({ isLightMode }: { isLightMode: boolean }) {

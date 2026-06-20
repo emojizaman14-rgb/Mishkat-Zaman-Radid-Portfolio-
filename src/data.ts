@@ -11,14 +11,14 @@ export const navigationItems: NavigationItem[] = [
 
 export const personalInfo = {
   name: 'Mishkat Zaman Radid',
-  profession: 'UI/UX Designer',
-  subtitle: 'Learning Robotics & Coding',
+  profession: 'UI/UX Designer & Psychologist',
+  subtitle: 'Learning Robotics, Coding & Psychological Science',
   email: 'mishkat.zaman.one@gmail.com',
   whatsapp: '+8801862256865',
-  bio: 'I am Mishkat Zaman Radid, a passionate UI/UX Designer and technology enthusiast. I am currently learning Robotics and Programming while continuously improving my design and development skills. I enjoy creating modern digital experiences with beautiful interfaces and smooth user experiences.',
+  bio: 'I am Mishkat Zaman Radid, a passionate UI/UX Designer, technology enthusiast, and aspiring Psychologist. I specialize in merging cognitive psychology and human behavior with technology, UI/UX aesthetics, and Robotics. I design beautiful, highly intuitive interfaces engineered with cognitive principles to provide seamless digital experiences while offering psychological guidance and professional consulting.',
   typedRoles: [
     'UI/UX Designer',
-    'Frontend Enthusiast',
+    'Psychologist',
     'Robotics Learner',
     'Programmer'
   ],
@@ -47,56 +47,59 @@ export const skillsData: SkillItem[] = [
   { name: 'Python', category: 'frontend', percentage: 75, iconName: 'Terminal', level: 'Intermediate', delay: 0.6 },
   { name: 'Robotics', category: 'robotics', percentage: 70, iconName: 'Cpu', level: 'Passionate', delay: 0.7 },
   { name: 'Responsive Design', category: 'design', percentage: 95, iconName: 'Smartphone', level: 'Expert', delay: 0.8 },
-  { name: 'Prototyping', category: 'design', percentage: 88, iconName: 'Cpu', level: 'Expert', delay: 0.9 }
+  { name: 'Prototyping', category: 'design', percentage: 88, iconName: 'Cpu', level: 'Expert', delay: 0.9 },
+  { name: 'Cognitive Psychology', category: 'psychology', percentage: 90, iconName: 'Brain', level: 'Expert', delay: 0.1 },
+  { name: 'Human Behavior Analysis', category: 'psychology', percentage: 85, iconName: 'Activity', level: 'Advanced', delay: 0.2 },
+  { name: 'Behavioral UX Consulting', category: 'psychology', percentage: 88, iconName: 'Heart', level: 'Expert', delay: 0.3 }
 ];
 
 export const servicesData: ServiceItem[] = [
   {
     id: 's1',
-    title: 'UI/UX Design',
-    description: 'Creating intuitive user flows, dark cyber interfaces, wireframes, and modern experiences aligned with industry-leading practices and visual trends.',
+    title: 'UI/UX & Cognitive Design',
+    description: 'Creating intuitive user flows structured around cognitive guidelines, dark cyber interfaces, wireframes, and modern experiences rooted in behavioral science.',
     iconName: 'Compass',
-    techStack: ['Figma', 'User Research', 'Wireframing'],
+    techStack: ['Figma', 'Cognitive UX', 'User Research'],
     delay: 0.1
   },
   {
     id: 's2',
-    title: 'Website Design',
-    description: 'Crafting visually stunning web experiences prioritizing dark luxury styling, fluid screen layouts, and elegant bespoke layouts tailored to tech projects.',
-    iconName: 'Laptop',
-    techStack: ['Visual Design', 'Web Aesthetics', 'Figma'],
+    title: 'Psychological Consultation',
+    description: 'Offering digital counseling and behavioral consulting, analyzing user/human psychology to resolve complex mental and modern digital engagement challenges.',
+    iconName: 'Brain',
+    techStack: ['CBT Principles', 'Consultation', 'Mental Science'],
     delay: 0.2
   },
   {
     id: 's3',
-    title: 'Responsive Web Design',
-    description: 'Ensuring seamless responsiveness and smooth layout scaling across all modern form factors (mobile, tablet, laptop, and ultra-wide desktops).',
-    iconName: 'Smartphone',
-    techStack: ['Tailwind CSS', 'Mobile First', 'Media Queries'],
+    title: 'Website Design',
+    description: 'Crafting visually stunning web experiences prioritizing dark luxury styling, fluid screen layouts, and elegant bespoke layouts tailored to tech projects.',
+    iconName: 'Laptop',
+    techStack: ['Visual Design', 'Web Aesthetics', 'Figma'],
     delay: 0.3
   },
   {
     id: 's4',
-    title: 'Frontend Development',
-    description: 'Translating rich Figma prototypes into pixel-perfect interactive code with neat animations, utilizing React, HTML5, CSS3, and JavaScript.',
-    iconName: 'Code',
-    techStack: ['React', 'JavaScript', 'Tailwind CSS'],
+    title: 'Responsive Web Design',
+    description: 'Ensuring seamless responsiveness and smooth layout scaling across all modern form factors (mobile, tablet, laptop, and ultra-wide desktops).',
+    iconName: 'Smartphone',
+    techStack: ['Tailwind CSS', 'Mobile First', 'Media Queries'],
     delay: 0.4
   },
   {
     id: 's5',
-    title: 'Design Systems',
-    description: 'Developing highly atomic, maintainable, scalable token-driven design architectures inside Figma and tailwind configurations for teams.',
-    iconName: 'Layers',
-    techStack: ['Atomic Design', 'Figma Components', 'Tokens'],
+    title: 'Frontend Development',
+    description: 'Translating rich Figma prototypes into pixel-perfect interactive code with neat animations, utilizing React, HTML5, CSS3, and JavaScript.',
+    iconName: 'Code',
+    techStack: ['React', 'JavaScript', 'Tailwind CSS'],
     delay: 0.5
   },
   {
     id: 's6',
-    title: 'Prototyping',
-    description: 'Building close-to-product high-fidelity micro-interactions and transitions to demonstrate complex UI animations and test real usability.',
-    iconName: 'Activity',
-    techStack: ['Figma Prototyping', 'Interactive Flows', 'Motion'],
+    title: 'Behavioral UX Audits',
+    description: 'Evaluating applications for positive friction, attention retention, mental load minimization, and peak usability using psychiatric-backed frameworks.',
+    iconName: 'Layers',
+    techStack: ['Retention Auditing', 'Nudge Theory', 'Usability'],
     delay: 0.6
   }
 ];
@@ -109,6 +112,14 @@ export const timelineData: TimelineItem[] = [
     subtitle: 'General Academic Studies & Science',
     description: 'Currently studying in high school, pairing secondary education with self-taught graphics design, UI/UX aesthetics, and coding systems.',
     type: 'education'
+  },
+  {
+    id: 'e1_psy',
+    period: 'Present',
+    title: 'Psychology Practitioner & Researcher',
+    subtitle: 'Human Behavior & Psychological Consultation',
+    description: 'Studying cognitive psychology, counseling, and human behavioral patterns to offer mental counseling and implement UX cognitive audits in digital products.',
+    type: 'experience'
   },
   {
     id: 'e2',

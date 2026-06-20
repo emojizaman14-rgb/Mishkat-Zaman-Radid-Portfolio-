@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, useInView } from 'motion/react';
-import { Compass, Layers, Code2, Code, Wind, Terminal, Cpu, Smartphone, Activity, Box, Palette } from 'lucide-react';
+import { Compass, Layers, Code2, Code, Wind, Terminal, Cpu, Smartphone, Activity, Box, Palette, Brain, Heart } from 'lucide-react';
 import { skillsData } from '../data';
 
 const iconMap: { [key: string]: any } = {
@@ -13,11 +13,13 @@ const iconMap: { [key: string]: any } = {
   Cpu: Cpu,
   Smartphone: Smartphone,
   Activity: Activity,
-  Palette: Palette
+  Palette: Palette,
+  Brain: Brain,
+  Heart: Heart
 };
 
 export default function Skills({ isLightMode }: { isLightMode: boolean }) {
-  const [selectedCategory, setSelectedCategory] = useState<'all' | 'design' | 'frontend' | 'robotics'>('all');
+  const [selectedCategory, setSelectedCategory] = useState<'all' | 'design' | 'frontend' | 'robotics' | 'psychology'>('all');
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: '-10% 0px' });
 
@@ -61,7 +63,8 @@ export default function Skills({ isLightMode }: { isLightMode: boolean }) {
               { id: 'all', label: 'All Tech' },
               { id: 'design', label: 'UI/UX Design' },
               { id: 'frontend', label: 'Frontend & Code' },
-              { id: 'robotics', label: 'Robotics Engineering' }
+              { id: 'robotics', label: 'Robotics Engineering' },
+              { id: 'psychology', label: 'Psychology Science' }
             ].map((tab) => (
               <button
                 key={tab.id}

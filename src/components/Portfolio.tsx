@@ -85,16 +85,94 @@ export default function Portfolio({ isLightMode }: { isLightMode: boolean }) {
                   isLightMode ? 'bg-white border-neutral-100' : 'bg-neutral-950 border-white/5'
                 }`}
               >
-                {/* Image layout container */}
-                <div className="w-full h-full relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700"
-                    referrerPolicy="no-referrer"
-                  />
+                {/* Custom Elegant Graphic Pattern in place of Unsplash stock images */}
+                <div className={`w-full h-full relative overflow-hidden flex flex-col items-center justify-center p-6 select-none ${
+                  isLightMode 
+                    ? 'bg-gradient-to-br from-neutral-50 via-white to-neutral-100' 
+                    : 'bg-gradient-to-br from-neutral-950 via-[#0a0f1d] to-[#040814]'
+                }`}>
+                  {/* Glowing ambient radial light block */}
+                  <div className={`absolute w-36 h-36 rounded-full blur-[60px] opacity-35 pointer-events-none ${
+                    project.category === 'Design' 
+                      ? 'bg-purple-600' 
+                      : project.category === 'Robotics' 
+                      ? 'bg-brand-cyan' 
+                      : 'bg-brand-blue'
+                  }`} />
+
+                  {/* Tech Grid Overlay */}
+                  <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
+
+                  {/* Specific Creative Graphics Pattern per category */}
+                  {project.category === 'Design' && (
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.14] scale-90">
+                      {/* Technical wireframe layout circles and crosshairs */}
+                      <div className="w-48 h-48 rounded-full border border-dashed border-purple-400 flex items-center justify-center animate-[spin_55s_linear_infinite]">
+                        <div className="w-32 h-32 rounded-full border border-dashed border-purple-400/60 flex items-center justify-center">
+                          <div className="w-16 h-16 rounded-full border border-purple-400/40" />
+                        </div>
+                      </div>
+                      <div className="absolute w-52 h-[1px] bg-purple-400" />
+                      <div className="absolute h-52 w-[1px] bg-purple-400" />
+                    </div>
+                  )}
+
+                  {project.category === 'Robotics' && (
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.16] scale-95">
+                      {/* Tech mechanical radar coordinate grids */}
+                      <div className="w-40 h-40 rounded-full border-2 border-brand-cyan/30 p-4 flex items-center justify-center">
+                        <div className="w-full h-full border border-dashed border-brand-cyan/60 rounded-full animate-[spin_30s_linear_infinite]" />
+                      </div>
+                      <div className="absolute w-8 h-8 border border-brand-cyan/50 rounded-md" />
+                      <div className="absolute w-[2px] h-[2px] rounded-full bg-brand-cyan animate-ping" />
+                      <div className="absolute -top-2 w-4 h-4 border-l border-t border-brand-cyan/60" />
+                      <div className="absolute -bottom-2 w-4 h-4 border-r border-b border-brand-cyan/60" />
+                    </div>
+                  )}
+
+                  {project.category === 'Code' && (
+                    <div className="absolute inset-0 p-6 flex flex-col justify-start pointer-events-none opacity-[0.22] text-left font-mono text-[9px] text-brand-blue overflow-hidden leading-snug">
+                      <div className="text-purple-400">{'import { Component } from "react";'}</div>
+                      <div className="text-gray-400">{'// Auto-compiled build module'}</div>
+                      <div className="mt-1">{'const AppState = {'}</div>
+                      <div className="pl-3 text-brand-cyan">{'title: "' + project.title.split(' ')[0] + '",'}</div>
+                      <div className="pl-3">{'completed: true,'}</div>
+                      <div className="pl-3">{'performance: "99.8%",'}</div>
+                      <div className="pl-3 text-purple-400">{'render: () => "neon"'}</div>
+                      <div>{'};'}</div>
+                    </div>
+                  )}
+
+                  {/* Core Icon represents category */}
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center relative z-10 mb-4 shadow-lg transition-transform duration-500 group-hover:scale-110 ${
+                    isLightMode 
+                      ? 'bg-neutral-100 text-neutral-800' 
+                      : 'bg-neutral-900 border border-white/5 text-white'
+                  }`}>
+                    {project.category === 'Design' && <Layers className="w-8 h-8 text-purple-400" />}
+                    {project.category === 'Robotics' && <Cpu className="w-8 h-8 text-brand-cyan" />}
+                    {project.category === 'Code' && <Code className="w-8 h-8 text-brand-blue" />}
+                  </div>
+
+                  {/* Preview details inside normal card view so users know what it is before hover */}
+                  <div className="text-center relative z-10 max-w-[85%] mt-1">
+                    <span className={`block text-[10px] uppercase font-mono font-bold tracking-widest mb-1.5 ${
+                      project.category === 'Design'
+                        ? 'text-purple-400'
+                        : project.category === 'Robotics'
+                        ? 'text-brand-cyan'
+                        : 'text-brand-blue'
+                    }`}>
+                      {project.category}
+                    </span>
+                    <h4 className={`font-display font-bold text-base line-clamp-1 ${
+                      isLightMode ? 'text-neutral-800' : 'text-neutral-200'
+                    }`}>
+                      {project.title}
+                    </h4>
+                  </div>
                   
-                  {/* Absolute subtle category label bar */}
+                  {/* Absolute subtle category badge */}
                   <span className="absolute top-4 left-4 z-20 text-[9px] font-mono tracking-widest font-bold uppercase bg-black/75 backdrop-blur-md text-brand-cyan px-2.5 py-1.5 rounded-lg border border-brand-cyan/20">
                     {project.category}
                   </span>
