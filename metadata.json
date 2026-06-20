@@ -1,0 +1,6 @@
+{
+  "name": "Mishkat Zaman Radid Portfolio",
+  "description": "A premium, dark-themed, highly interactive personal portfolio website for Mishkat Zaman Radid, a UI/UX Designer and technology enthusiast.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
