@@ -7,6 +7,7 @@ interface RainDrop {
   len: number;
   speed: number;
   opacity: number;
+  width: number;
 }
 
 interface Spark {
@@ -82,16 +83,18 @@ export default function CyberBackground() {
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
-    // Spawn optimized raindrops (reduced to 50 max for butter-smooth rendering)
-    const dropCount = Math.floor(Math.min(window.innerWidth / 15, 55));
+    // Spawn optimized high-visibility raindrops with depth categories (3D Parallax system)
+    const dropCount = Math.floor(Math.min(window.innerWidth / 8, 120));
     const drops: RainDrop[] = [];
     for (let i = 0; i < dropCount; i++) {
+      const isForeground = Math.random() < 0.4; // 40% are foreground drops
       drops.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        len: Math.random() * 12 + 6,
-        speed: Math.random() * 8 + 8,
-        opacity: Math.random() * 0.18 + 0.04,
+        len: isForeground ? Math.random() * 16 + 22 : Math.random() * 10 + 10,
+        speed: isForeground ? Math.random() * 6 + 18 : Math.random() * 6 + 11,
+        opacity: isForeground ? Math.random() * 0.24 + 0.22 : Math.random() * 0.14 + 0.10,
+        width: isForeground ? Math.random() * 0.6 + 1.3 : Math.random() * 0.4 + 0.7,
       });
     }
 
@@ -235,25 +238,28 @@ export default function CyberBackground() {
         }
       });
 
-      // --- 2. UPDATE & DRAW OPTIMIZED RAINDROPS ---
-      ctx.lineWidth = 1.0;
+      // --- 2. UPDATE & DRAW OPTIMIZED HIGH-VISIBILITY RAINDROPS ---
       ctx.lineCap = 'round';
 
       drops.forEach((drop) => {
         ctx.beginPath();
+        ctx.lineWidth = drop.width;
         ctx.strokeStyle = `rgba(0, 240, 255, ${drop.opacity})`;
         ctx.moveTo(drop.x, drop.y);
-        ctx.lineTo(drop.x + drop.speed * 0.03, drop.y + drop.len);
+        ctx.lineTo(drop.x - drop.speed * 0.04, drop.y + drop.len); // Elegant natural wind slant
         ctx.stroke();
 
         // Update position
         drop.y += drop.speed;
-        drop.x += drop.speed * 0.03;
+        drop.x -= drop.speed * 0.04;
 
         // Reset drop if offscreen
         if (drop.y > canvas.height) {
           drop.y = -drop.len;
           drop.x = Math.random() * canvas.width;
+        } else if (drop.x < -20) {
+          drop.x = canvas.width + 20;
+          drop.y = Math.random() * canvas.height * 0.6;
         }
       });
 
